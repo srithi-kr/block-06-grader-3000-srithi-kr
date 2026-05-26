@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grader 3000</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: antiquewhite;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: rosybrown;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .section h2 {
+            color: #3a1c1c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3a1c1c;
+        }
+
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .input-group {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .input-group:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #3a1c1c;
+        }
+
+        .input-group input.negative {
+            border-color: #dc3545;
+            background-color: #fff0f0;
+        }
+
+        .attendance-group {
+            background: rosybrown;
+            color: white;
+        }
+
+        .attendance-group label {
+            color: white;
+        }
+
+        .result-section {
+            background: rosybrown;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .result-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .final-grade {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .grade-text {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        .warning {
+            background: rgba(255,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .dropped-exercise {
+            background-color: #ffeaa7;
+            border: 2px solid #fdcb6e;
+        }
+
+        .dropped-exercise label {
+            color: #e17055;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+
+        .badge-dropped {
+            background: #fdcb6e;
+            color: #e17055;
+        }
+
+        .badge-negative {
+            background: #dc3545;
+            color: white;
+        }
+
+        .info-text {
+            font-size: 0.9em;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .exercises-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-grade {
+                font-size: 2em;
+            }
+        }
+    </style>
+    <script type="module" src="js/controller.js"></script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Grader 3000</h1>
+        <p>User Experience Design - Notenberechnungssystem</p>
+    </header>
+
+    <div class="content">
+        <div id="app">
+            <!-- View wird hier eingefügt -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
